@@ -1,14 +1,8 @@
 # Metelica_app
-micro service applicaton with service descovery &amp; api gateway
 
+There are two microservice **trade_service** and **market_data_service**.
+**trade_service** call the **market_data_service** for getting the latest price of metal in market.
 
-Welcome to the Metelica_app wiki! This is normal microservice application.
+**trade_service** discover the url of **market_data_service** with the help of eureka service discovery. For that we have written seperate project name **eurekanamingserver**. All the microserivces register themselves on **eurekanamingserver**
 
-
-There are two microservice trade_service and market_data_service. 
-
-1)trade_service call the market_data_service for getting the latest price of metal in market.
-
-2)trade_service discover the url of market_data_service with the help of eureka service discovery.
-
-3)
+**zuul-api-gateway-server** is api gateway to all the microservice.This act as fronthand layer to all microservices.
