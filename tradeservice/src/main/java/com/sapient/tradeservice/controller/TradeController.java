@@ -33,12 +33,12 @@ public class TradeController {
 	@GetMapping("/{metalName}") 
 	public List<Trade> fetchTrades(@PathVariable String metalName) {
 		//discoveryClient.g
-		for(String service : discoveryClient.getServices()) {
-			for(ServiceInstance serviceInstance:discoveryClient.getInstances(service)) {
-				 String name = serviceInstance.getUri().toString();
-		            System.out.println(name + ": ");
-			}
-		}
+//		for(String service : discoveryClient.getServices()) {
+//			for(ServiceInstance serviceInstance:discoveryClient.getInstances(service)) {
+//				 String name = serviceInstance.getUri().toString();
+//		            System.out.println(name + ": ");
+//			}
+//		}
 		return tradeService.fetchTrades(metalName);
 	}
 }
